@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.11 FATAL_ERROR)
 
 project(s C)
 
-add_executable(s)
+add_executable(sh)
 
-target_sources(s
+target_sources(sh
     PRIVATE
         "${CMAKE_CURRENT_SOURCE_DIR}/s.c"
         "${CMAKE_CURRENT_SOURCE_DIR}/builtins.c"
@@ -19,7 +19,7 @@ target_sources(s
         "${CMAKE_CURRENT_SOURCE_DIR}/linenoise/encodings/utf8.c"
 )
 
-target_include_directories(s
+target_include_directories(sh
     PRIVATE
         "${CMAKE_CURRENT_SOURCE_DIR}/linenoise"
 )
@@ -38,4 +38,4 @@ target_sources(redir-box
         "${CMAKE_CURRENT_SOURCE_DIR}/supporting/redir-box.c"
 )
 
-install(TARGETS s glob redir-box)
+install(TARGETS sh glob redir-box)

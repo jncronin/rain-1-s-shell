@@ -21,11 +21,15 @@ main(int argc, char **argv)
 		             NULL, &g)) {
 		case GLOB_NOSPACE:
 			fprintf(stderr, "glob: running out of memory\n");
-		case GLOB_ABORTED:
+		/*case GLOB_ABORTED:
 			fprintf(stderr, "glob: read error\n");
 		case GLOB_NOMATCH:
 			fprintf(stderr, "glob: no matches\n");
-			return EXIT_FAILURE;
+			return EXIT_FAILURE;*/
+		case 0:
+			break;
+		default:
+			fprintf(stderr, "glob: error\n");
 		}
 
 	if (!g.gl_pathv[0]) {
